@@ -1,30 +1,27 @@
 include: 
   - "airflow_settings_base.yaml"
-
-config:
-  prefix: example
-vars:
-  a:
-    test1: "test value 1"
-    test_arr: ["test1", "test2"]
+  # if in "airflow_settings_base_2.yaml" there is a keys that exist in 
+  # airflow_settings_base.yaml - they will be overwritted
+  - "airflow_settings_base_2.yaml"
 
 airflow:
-  connections:
-    - conn_id:
-      conn_type:
-      conn_host:
-      conn_login:
-      conn_password:
-      conn_port:
-      conn_extra:
-        - arg-1: value
-        - arg-2: value
-        
+  connections: []   
   pools:
-    - pool_name:
-      pool_slot:
-      pool_description:
+    - name: Deferred Test Pool
+      slots: 12
+      description: Deferred pool
+      include_deferred: true
+    - name: Default
+      slots: 120
+      description: null
+      include_deferred: false
   variables:
-    - variable_name:
-      variable_value:
-
+    - key: 2v
+      value: '{"some": "json"}'
+      description:
+    - key: 3v
+      value: '["value", "weird but ok"]'
+      description: '["some description", "ok"]'
+    - key: 1v
+      value: aaaaa
+      description: null

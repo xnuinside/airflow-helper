@@ -3,16 +3,42 @@ name = "airflow-helper"
 version = "0.1.0"
 description = ""
 authors = ["Iuliia Volkova <xnuinside@gmail.com>"]
-readme = "README.md"
+license = "MIT"
+readme = "docs/README.rst"
+homepage = "https://github.com/xnuinside/airflow-helper"
+repository = "https://github.com/xnuinside/airflow-helper"
+classifiers = [
+    "Programming Language :: PL/SQL",
+    "Programming Language :: SQL",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
 pyyaml = "^6.0.1"
 pydantic = "^2.5.1"
+apache-airflow-client = "^2.7.3"
+pydantic-settings = "^2.1.0"
+typer = "^0.9.0"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.5.0"
 pytest = "^7.4.3"
+apache-airflow = "^2.7.3"
+m2r2 = "^0.3.3.post2"
+twine = "^4.0.2"
+
+[tool.poetry.scripts]
+airflow-helper = 'airflow_helper.cli:cli'
+
 
 [build-system]
 requires = ["poetry-core"]

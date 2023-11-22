@@ -1,35 +1,30 @@
-## How to contribute
+### Ways to Contribute
+1. Open an Issue:
 
+If you encounter a bug or have a feature request, please open an issue. Provide a clear and detailed description so that we can better understand and address your concern.
 
-## What can you do?
+2. Contribute Code:
 
-There is a lot of way how you can contribute to any project (not only in this), you can do it without code:
+Fork the repository and create a branch for your contribution.
+Make your changes and ensure the code follows the project's coding standards.
+Test your changes thoroughly.
+Submit a pull request (PR) with a clear title and description.
 
-- Open the issue with new test case - SQL Statements that is not supported yet. What need to remember when you open such PR:
+3. Enhance Documentation:
 
-1) it must be valid SQL statement
-2) if it is a some dialect - HQL, MySQL, Vertica or any - please mark it in the issue
-3) if it totally new statement with no similar fields in output you also can add suggestions that must be in output as result
+Documentation is crucial for the project's usability. If you find areas that need improvement or if you add new features, update the documentation accordingly.
 
-- Add more statements to the parser
+4. Share Ideas and Feedback:
 
-1) Parser is written by lexx&yacc with usage ply library - https://www.dabeaz.com/ply/. If you never work with it - don't be afraid, it's pretty simple, need only to get main idea.
+Engage in discussions by participating in existing issues or starting new ones. Share your thoughts, ideas, or feedback to help improve the project.
 
-2) All parsers tokens are placed in tokens.py & statements described in ddl_parser.py for common and dialect-specific things I tried to move in dialects package (but not all yet)
+### Feature Requests
+If you have ideas for new features or improvements, feel free to open an issue and describe your proposal. We welcome all suggestions!
 
-3) When you prepare PR with some new statements do not forget create test to them similar as already exists in tests/
+### Contact
+If you have any questions or need further assistance, don't hesitate to contact me - t.me/xnuinside or email xnuinside@gmail.com.
 
-4) Before open the PR run flake8 check (it required and will be runs in Actions on PR in GitHub)
-
-5) Do not forget add changes to CHANGELOG.txt
-
-6) And updated SUPPORTED Statements in README.md
-
-- Add more tests to the code
-
-It's always needed, I have only functional tests right now, so if you want to help wiht covering library for example, with unittests - please welcome, open the PR.
-
-For ANY type of contributinon I will really really appritiate. Each of them are important.
+Thank you for contributing to Airflow Helper! 🚀
 
 ### How to run tests
 

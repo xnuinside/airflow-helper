@@ -6,20 +6,14 @@ include:
 
 airflow:
   connections:
-    - id:
-      type:
-      host:
-      login:
-      password:
-      port:
-      extra:
-        arg-1: value
-        arg-2: value    
+    - id: 'own-dev-connection'
+      type: fs
   pools:
-    - name:
-      slot:
-      description:
+    - name: 'own-dev-pool'
+      slots: 110
+      description: 'special dev pool'
+      include_deferred: false
   variables:
-    - name:
-      value:
-      description:
+    - key: 'own-dev-key'
+      value: 'own-dev-value'
+      description: ''

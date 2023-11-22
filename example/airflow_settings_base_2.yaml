@@ -1,0 +1,6 @@
+airflow:
+  connections:
+    - id: another_connection
+      type: fs
+      host: localhost
+  
