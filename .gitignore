@@ -1,0 +1,14 @@
+dump_schemas/
+schemas/
+*.pyc
+simple_ddl_parser/__pycache__
+dist/
+.pytest_cache/
+simple_ddl_parser.egg-info/
+simple_ddl_parser/parser.out
+simple_ddl_parser/dialects/__pycache__
+.vscode/
+poetry.lock
+.idea/
+venv/
+payload.json

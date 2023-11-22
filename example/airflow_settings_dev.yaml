@@ -1,0 +1,25 @@
+include: 
+  - "airflow_settings_base.yaml"
+  # if in "airflow_settings_base_2.yaml" there is a keys that exist in 
+  # airflow_settings_base.yaml - they will be overwritted
+  - "airflow_settings_base_2.yaml"
+
+airflow:
+  connections:
+    - id:
+      type:
+      host:
+      login:
+      password:
+      port:
+      extra:
+        arg-1: value
+        arg-2: value    
+  pools:
+    - name:
+      slot:
+      description:
+  variables:
+    - name:
+      value:
+      description:

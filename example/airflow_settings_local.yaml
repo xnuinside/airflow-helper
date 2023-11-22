@@ -1,0 +1,30 @@
+include: 
+  - "airflow_settings_base.yaml"
+
+config:
+  prefix: example
+vars:
+  a:
+    test1: "test value 1"
+    test_arr: ["test1", "test2"]
+
+airflow:
+  connections:
+    - conn_id:
+      conn_type:
+      conn_host:
+      conn_login:
+      conn_password:
+      conn_port:
+      conn_extra:
+        - arg-1: value
+        - arg-2: value
+        
+  pools:
+    - pool_name:
+      pool_slot:
+      pool_description:
+  variables:
+    - variable_name:
+      variable_value:
+
