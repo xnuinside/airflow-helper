@@ -38,6 +38,8 @@ I can only guarantee that 100% library works with Apache Airflow versions that a
 
 #### Installation
 
+1. With Python in virtualenv from PyPi: https://pypi.org/project/airflow-helper/
+
 ```console
 
     pip install airflow-helper
@@ -50,6 +52,17 @@ I can only guarantee that 100% library works with Apache Airflow versions that a
 
 ```
 
+2. With docker image from Docker Hub: https://hub.docker.com/repository/docker/xnuinside/airflow-helper/
+
+``` console
+
+  # pull image
+  docker pull xnuinside/airflow-helper:latest
+
+  # sample how to run command
+
+  docker run -it xnuinside/airflow-helper:latest --help
+```
 
 #### Default settings
 
