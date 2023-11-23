@@ -2,8 +2,26 @@
    :format: html
 
 
-About the project
-^^^^^^^^^^^^^^^^^
+About the Airflow Helper
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. image:: https://img.shields.io/pypi/v/airflow-helper
+   :target: https://img.shields.io/pypi/v/airflow-helper
+   :alt: badge1
+ 
+.. image:: https://img.shields.io/pypi/l/airflow-helper
+   :target: https://img.shields.io/pypi/l/airflow-helper
+   :alt: badge2
+ 
+.. image:: https://img.shields.io/pypi/pyversions/airflow-helper
+   :target: https://img.shields.io/pypi/pyversions/airflow-helper
+   :alt: badge3
+ 
+.. image:: https://github.com/xnuinside/airflow-helper/actions/workflows/ci-tests-runner.yml/badge.svg
+   :target: https://github.com/xnuinside/airflow-helper/actions/workflows/ci-tests-runner.yml/badge.svg
+   :alt: workflow
+
 
 It's pretty fresh. Docs maybe not clear yet, keep calm ! I will update them soon :) 
 
@@ -42,6 +60,9 @@ How to use
 Installation
 ~~~~~~~~~~~~
 
+
+#. With Python in virtualenv from PyPi: https://pypi.org/project/airflow-helper/
+
 .. code-block:: console
 
 
@@ -51,6 +72,22 @@ Installation
 
 
      airflow-helper --version
+
+
+#. With docker image from Docker Hub: https://hub.docker.com/repository/docker/xnuinside/airflow-helper/
+
+.. code-block:: console
+
+
+     # pull image
+     docker pull xnuinside/airflow-helper:latest
+
+     # sample how to run command
+
+     docker run -it xnuinside/airflow-helper:latest --help
+
+
+#. Example, how to use in docker-compose: example/docker-compose-example.yaml
 
 Default settings
 ~~~~~~~~~~~~~~~~
@@ -264,3 +301,7 @@ Inspiration
 By Astronomer airflow_settings.yaml https://forum.astronomer.io/t/what-is-the-new-airflow-settings-yaml-file-for/149/21 (that looks like deprecated now)
 
 And airflow-vars https://github.com/omerzamir/airflow-vars (but I want pure python tool)
+*0.1.1*
+
+
+#. Overwrite oprion added to ``airflow-helper load`` command
