@@ -88,9 +88,23 @@ def load(
     password: Annotated[
         str, typer.Option("--password", "-p", help="Apache Airflow user password")
     ] = s.password,
+    overwrite: Annotated[
+        bool,
+        typer.Option(
+            "--overwrite",
+            "-o",
+            help="Overwrite Connections & Pools if they already exists",
+        ),
+    ] = False,
 ):
     ConfigUploader(
-        file_path=file_path, url=url, host=host, port=port, user=user, password=password
+        overwrite=overwrite,
+        file_path=file_path,
+        url=url,
+        host=host,
+        port=port,
+        user=user,
+        password=password,
     ).upload_config_to_server()
 
 

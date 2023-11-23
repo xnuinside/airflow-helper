@@ -269,3 +269,6 @@ Example, to overwrite default airflow host you should provide environment variab
 By Astronomer airflow_settings.yaml https://forum.astronomer.io/t/what-is-the-new-airflow-settings-yaml-file-for/149/21 (that looks like deprecated now)
 
 And airflow-vars https://github.com/omerzamir/airflow-vars (but I want pure python tool)
+*0.1.1*
+
+1. Overwrite oprion added to `airflow-helper load` command
