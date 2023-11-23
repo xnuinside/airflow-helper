@@ -3,6 +3,4 @@ airflow:
     - id: fs_default
       type: File System default
       host: localhost
-      extra:
-        arg-1: value
-        arg-2: value    
+      extra: '{"arg-1": "value", "arg-2": "value"}'

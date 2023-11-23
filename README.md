@@ -1,7 +1,7 @@
 ### About the Airflow Helper
 
 
-![badge1](https://img.shields.io/pypi/v/airflow-helper) ![badge2](https://img.shields.io/pypi/l/airflow-helper) ![badge3](https://img.shields.io/pypi/pyversions/airflow-helper) ![workflow](https://github.com/xnuinside/airflow-helper/actions/workflows/main.yml/badge.svg)
+![badge1](https://img.shields.io/pypi/v/airflow-helper) ![badge2](https://img.shields.io/pypi/l/airflow-helper) ![badge3](https://img.shields.io/pypi/pyversions/airflow-helper) ![workflow](https://github.com/xnuinside/airflow-helper/actions/workflows/ci-tests-runner.yml/badge.svg)
 
 
 It's pretty fresh. Docs maybe not clear yet, keep calm ! I will update them soon :) 
@@ -38,6 +38,8 @@ I can only guarantee that 100% library works with Apache Airflow versions that a
 
 #### Installation
 
+1. With Python in virtualenv from PyPi: https://pypi.org/project/airflow-helper/
+
 ```console
 
     pip install airflow-helper
@@ -50,6 +52,19 @@ I can only guarantee that 100% library works with Apache Airflow versions that a
 
 ```
 
+2. With docker image from Docker Hub: https://hub.docker.com/repository/docker/xnuinside/airflow-helper/
+
+``` console
+
+  # pull image
+  docker pull xnuinside/airflow-helper:latest
+
+  # sample how to run command
+
+  docker run -it xnuinside/airflow-helper:latest --help
+```
+
+1. Example, how to use in docker-compose: example/docker-compose-example.yaml
 
 #### Default settings
 
