@@ -3,12 +3,7 @@
 version: '3'
 x-airflow-common:
   &airflow-common
-  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.1.2}
-  build:
-    context: ../..
-    dockerfile: docker/Dockerfile
-    args:
-      - GITLAB_TOKEN=${GITLAB_TOKEN:?err}
+  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.7.3}
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
@@ -29,7 +24,7 @@ services:
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
     volumes:
-      - postgres-db-volume:/var/lib/postgresql/data
+      - db-volume:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 5s
@@ -55,6 +50,18 @@ services:
       _AIRFLOW_WWW_USER_CREATE: 'true'
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+  
+
+  airflow-helper:
+    volumes:
+      - .:/app/configs
+    image: xnuinside/airflow-helper:latest
+    command: load /app/configs/airflow_settings_local.yaml --host http://airflow-webserver
+    depends_on:
+      postgres:
+        condition: service_healthy
+      airflow-webserver:
+        condition: service_healthy
 
 volumes:
   db-volume:
