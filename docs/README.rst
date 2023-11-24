@@ -295,13 +295,15 @@ TODO
 #. Load configs from git
 #. Create overwrite mode for settings upload
 
-Inspiration
-^^^^^^^^^^^
+Changelog
+---------
 
-By Astronomer airflow_settings.yaml https://forum.astronomer.io/t/what-is-the-new-airflow-settings-yaml-file-for/149/21 (that looks like deprecated now)
+*0.1.2*
 
-And airflow-vars https://github.com/omerzamir/airflow-vars (but I want pure python tool)
+
+#. Do not fail if some sections from config are not exists
+
 *0.1.1*
 
 
-#. Overwrite oprion added to ``airflow-helper load`` command
+#. Overwrite option added to ``airflow-helper load`` command

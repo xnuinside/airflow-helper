@@ -26,11 +26,14 @@ class ConfigUploader:
 
     def upload_config_to_server(self):
         logger.info(f"Uploading connections to airflow server: {self.api.url}")
-        self.api.create_connections(self.config.airflow.connections)
-        logger.info(f"Uploading pools to airflow server: {self.api.url}")
-        self.api.create_pools(self.config.airflow.pools)
-        logger.info(f"Uploading variables to airflow server: {self.api.url}")
-        self.api.create_variables(self.config.airflow.variables)
+        if self.config.airflow.connections:
+            self.api.create_connections(self.config.airflow.connections)
+        if self.config.airflow.pools:
+            logger.info(f"Uploading pools to airflow server: {self.api.url}")
+            self.api.create_pools(self.config.airflow.pools)
+        if self.config.airflow.variables:
+            logger.info(f"Uploading variables to airflow server: {self.api.url}")
+            self.api.create_variables(self.config.airflow.variables)
 
 
 class PostAirflowAPI(AirflowAPIBase):
