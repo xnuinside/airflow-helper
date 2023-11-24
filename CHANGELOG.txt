@@ -1,3 +1,5 @@
-*0.1.1*
+*0.1.2*
+1. Do not fail if some sections from config are not exists
 
+*0.1.1*
 1. Overwrite option added to `airflow-helper load` command

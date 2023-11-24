@@ -264,11 +264,9 @@ Example, to overwrite default airflow host you should provide environment variab
 4. Load configs from git
 5. Create overwrite mode for settings upload
 
+## Changelog
+*0.1.2*
+1. Do not fail if some sections from config are not exists
 
-### Inspiration
-By Astronomer airflow_settings.yaml https://forum.astronomer.io/t/what-is-the-new-airflow-settings-yaml-file-for/149/21 (that looks like deprecated now)
-
-And airflow-vars https://github.com/omerzamir/airflow-vars (but I want pure python tool)
 *0.1.1*
-
-1. Overwrite oprion added to `airflow-helper load` command
+1. Overwrite option added to `airflow-helper load` command
