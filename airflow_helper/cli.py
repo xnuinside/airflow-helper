@@ -96,9 +96,18 @@ def load(
             help="Overwrite Connections & Pools if they already exists",
         ),
     ] = False,
+    skip_existed: Annotated[
+        bool,
+        typer.Option(
+            "--skip-existed",
+            "-se",
+            help="Skip `already exists` errors",
+        ),
+    ] = False,
 ):
     ConfigUploader(
         overwrite=overwrite,
+        skip_existed=skip_existed,
         file_path=file_path,
         url=url,
         host=host,
