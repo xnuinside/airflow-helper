@@ -1,3 +1,11 @@
+*0.2.0*
+
+1. Added check for variables - now if variable already exists on server Airflow Helper will raise error if you tries to overwrite it from the config.
+To overwrite existed Variables, Connections, Pools - use flag '--overwrite' or argument with same name, if you use Airflow Helper from Python.
+
+2. Added flag --skip-existed to avoid raise error if variables/connections/pools exists already on Airflow Server - it will just add new one from config file.
+
+
 *0.1.2*
 1. Do not fail if some sections from config are not exists
 

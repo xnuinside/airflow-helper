@@ -94,10 +94,37 @@ Default settings
 
 All arguments that required in cli or Python code have 'default' setting, you can check all of them in file 'airflow_helper/settings.py'
 
-Variables overwriting
-~~~~~~~~~~~~~~~~~~~~~
+Airflow Helper settings & flags
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note, that by default Airflow always overwrite variables, then you want to set up same that exists already in Airflow DB. 'overwrite' param that exists in Airflow Helper in config upload process relative only to Pools.
+You can configure how you want to use config - overwrite existed variables/connections/pools with values from config or just skip them, or raise error if already exist. 
+
+In cli (or as arguments in Python main class, if you use helper directly from python) exist several useful flags, that you can use:
+
+.. code-block:: console
+
+
+         airflow-helper load [OPTIONS] [FILE_PATH]       
+
+     # options:
+       --url    TEXT  Apache Airflow full url to connect. You can provide it or host & port separately. [default: None]--host   TEXT  Apache Airflow server host form that obtain existed settings [default: http://localhost] 
+       --port   TEXT  Apache Airflow server port form that obtain existed settings [default: 8080]              
+       --user       -u    TEXT  Apache Airflow user with read rights [default: airflow]
+       --password   -p    TEXT  Apache Airflow user password [default: airflow]       
+       --overwrite  -o          Overwrite Connections & Pools if they already exists 
+       --skip-existed  -se      Skip `already exists` errors
+       --help          -h       Show this message and exit.
+
+.. code-block:: console
+
+
+         airflow-helper create [OPTIONS] COMMAND [ARGS] 
+
+     # commands:
+       from-server                Create config with values from existed Airflow Server         
+       new                        Create new empty config 
+     # options
+       --help          -h       Show this message and exit.
 
 What if I already have Airflow server with dozens of variables??
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -297,6 +324,16 @@ TODO
 
 Changelog
 ---------
+
+*0.2.0*
+
+
+#. 
+   Added check for variables - now if variable already exists on server Airflow Helper will raise error if you tries to overwrite it from the config.
+   To overwrite existed Variables, Connections, Pools - use flag '--overwrite' or argument with same name, if you use Airflow Helper from Python.
+
+#. 
+   Added flag --skip-existed to avoid raise error if variables/connections/pools exists already on Airflow Server - it will just add new one from config file.
 
 *0.1.2*
 

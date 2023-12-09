@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     config_file_name: str = "airflow_settings.yaml"
     # upload settings
     overwrite: bool = False
+    skip_existed: bool = False
 
     model_config = SettingsConfigDict(env_prefix="airflow_helper_")
 
