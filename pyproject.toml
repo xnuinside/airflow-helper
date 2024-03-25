@@ -27,7 +27,7 @@ pyyaml = "^6.0.1"
 pydantic = "^2.5.1"
 apache-airflow-client = "^2.7.3"
 pydantic-settings = "^2.1.0"
-typer = "^0.9.0"
+typer = ">=0.9,<0.11"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.5.0"
